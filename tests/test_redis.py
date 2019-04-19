@@ -6,7 +6,7 @@ import unittest
 from pygments_redis import RedisLexer
 
 
-class PythonTest(unittest.TestCase):
+class RedisTest(unittest.TestCase):
     def setUp(self):
         self.lexer = RedisLexer()
 
