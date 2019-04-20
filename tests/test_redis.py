@@ -296,6 +296,78 @@ OK
             (Token.Text, "\n"),
         ],
     ),
+    "test_get_tokens_prompts": (
+        """\
+localhost:6379> GET dnekey
+(nil)
+127.0.0.1:6379[10]> GET dnekey
+(nil)
+redis://a:b@c.e:8000/0> GET dnekey
+(nil)
+[::1]:6379> GET dnekey
+(nil)
+redis://user:secret@localhost:6379/0?foo=bar&qux=baz> GET dnekey
+(nil)
+redis://myapp-001.abcdef.0001.use1.cache.amazonaws.com:6379/0> GET dnekey
+(nil)
+""",
+        [
+            (Token.Generic.Prompt, "localhost:6379>"),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+            (Token.Generic.Prompt, "127.0.0.1:6379[10]>"),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+            (Token.Generic.Prompt, "redis://a:b@c.e:8000/0>"),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+            (Token.Generic.Prompt, "[::1]:6379>"),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+            (
+                Token.Generic.Prompt,
+                "redis://user:secret@localhost:6379/0?foo=bar&qux=baz>",
+            ),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+            (
+                Token.Generic.Prompt,
+                "redis://myapp-001.abcdef.0001.use1.cache.amazonaws.com:6379/0>",  # noqa
+            ),
+            (Token.Text, " "),
+            (Token.Keyword, "GET"),
+            (Token.Text, " "),
+            (Token.Text, "dnekey"),
+            (Token.Text, "\n"),
+            (Token.Keyword.Type, "(nil)"),
+            (Token.Text, "\n"),
+        ],
+    ),
 }
 
 if __name__ == "__main__":
