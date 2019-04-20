@@ -1,6 +1,8 @@
 # pygments-redis
 
-CircleCI: [![CircleCI](https://circleci.com/gh/realpython/pygments-redis/tree/master.svg?style=svg)](https://circleci.com/gh/realpython/pygments-redis/tree/master)
+[![Build](https://img.shields.io/circleci/project/github/realpython/pygments-redis.svg)](https://circleci.com/gh/realpython/pygments-redis/tree/master)
+[![License](https://img.shields.io/github/license/realpython/pygments-redis.svg)](https://github.com/realpython/pygments-redis/blob/master/LICENSE)
+[![Version](https://img.shields.io/pypi/v/pygments-redis.svg)](https://pypi.org/project/pygments-redis/)
 
 ----
 
